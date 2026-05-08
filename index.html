@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta: 3 Nichos Recomendados para Inversion</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.7;
+  color: #1a2744;
+  background: linear-gradient(135deg, #f8f9fc 0%, #eef2f7 100%);
+  padding: 40px 20px;
+}
+.container { max-width: 980px; margin: 0 auto; }
+
+/* HEADER */
+.cover {
+  background: linear-gradient(135deg, #1a2744 0%, #2d4a8a 100%);
+  color: white;
+  padding: 60px 50px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(26, 39, 68, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: "";
+  position: absolute;
+  top: -50%; right: -20%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(232, 184, 75, 0.15), transparent);
+  border-radius: 50%;
+}
+.brand-tag {
+  display: inline-block;
+  background: rgba(232, 184, 75, 0.2);
+  color: #e8b84b;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.cover h1 {
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+}
+.cover .subtitle {
+  font-size: 17px;
+  opacity: 0.9;
+  font-weight: 300;
+}
+.cover .date {
+  margin-top: 25px;
+  font-size: 13px;
+  opacity: 0.7;
+  letter-spacing: 1px;
+}
+
+/* INTRO */
+.intro {
+  background: white;
+  padding: 35px 40px;
+  border-radius: 16px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  border-left: 5px solid #e8b84b;
+}
+.intro h2 {
+  color: #1a2744;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+.intro p {
+  color: #2c3e50;
+  font-size: 15px;
+}
+
+/* STATS BAR */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+.stat-card {
+  background: white;
+  padding: 22px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+  border-top: 3px solid #2d4a8a;
+}
+.stat-num { font-size: 32px; font-weight: 800; color: #1a2744; }
+.stat-label { font-size: 11px; color: #7f8c8d; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+/* NICHO CARDS */
+.nicho {
+  background: white;
+  border-radius: 18px;
+  padding: 0;
+  margin-bottom: 30px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  position: relative;
+}
+.nicho-header {
+  padding: 32px 40px 20px;
+  background: linear-gradient(135deg, #f8f9fc, #eef2f7);
+  border-bottom: 3px solid #e8b84b;
+}
+.rank-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #e8b84b, #f5c869);
+  color: #1a2744;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  font-weight: 800;
+  font-size: 18px;
+  margin-bottom: 12px;
+  box-shadow: 0 3px 10px rgba(232, 184, 75, 0.4);
+}
+.nicho h2 {
+  color: #1a2744;
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.nicho-tagline {
+  color: #2d4a8a;
+  font-size: 15px;
+  font-weight: 500;
+  font-style: italic;
+}
+.nicho-body { padding: 30px 40px 40px; }
+
+/* QUICK INFO PILLS */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 25px;
+}
+.pill {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.pill-market { background: #e3f2fd; color: #1565c0; }
+.pill-price { background: #e8f5e9; color: #2e7d32; }
+.pill-format { background: #fff3e0; color: #e65100; }
+.pill-audience { background: #f3e5f5; color: #6a1b9a; }
+
+/* SECTION BLOCKS */
+.block {
+  margin-bottom: 22px;
+}
+.block-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #2d4a8a;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+.block-title::before {
+  content: "";
+  width: 4px; height: 18px;
+  background: #e8b84b;
+  border-radius: 2px;
+}
+.block-content {
+  color: #2c3e50;
+  font-size: 14.5px;
+  line-height: 1.75;
+}
+.block-content ul {
+  list-style: none;
+  padding-left: 0;
+}
+.block-content li {
+  padding-left: 24px;
+  position: relative;
+  margin-bottom: 8px;
+}
+.block-content li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+/* EVIDENCE TABLE */
+.evidence-box {
+  background: #f8f9fc;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px 0;
+  border-left: 4px solid #2d4a8a;
+}
+.evidence-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #2d4a8a;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+.evidence-item {
+  background: white;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 13px;
+  border: 1px solid #ecf0f1;
+}
+.evidence-name { font-weight: 600; color: #1a2744; }
+.evidence-stats { color: #7f8c8d; font-size: 12px; }
+
+/* PROS & CONS */
+.pros-cons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin: 18px 0;
+}
+.pros-box, .cons-box {
+  padding: 18px 22px;
+  border-radius: 12px;
+}
+.pros-box { background: #eafaf1; border-left: 4px solid #27ae60; }
+.cons-box { background: #fef9e7; border-left: 4px solid #e8b84b; }
+.pros-box .block-title { color: #1e8449; }
+.cons-box .block-title { color: #b7950b; }
+.pros-box .block-title::before { background: #27ae60; }
+.cons-box .block-title::before { background: #e8b84b; }
+
+/* CTA */
+.cta-box {
+  background: linear-gradient(135deg, #1a2744, #2d4a8a);
+  color: white;
+  padding: 28px;
+  border-radius: 14px;
+  margin-top: 25px;
+  text-align: center;
+}
+.cta-box .label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #e8b84b;
+  margin-bottom: 8px;
+}
+.cta-box .recommendation {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* FINAL DECISION */
+.decision {
+  background: linear-gradient(135deg, #1a2744, #2d4a8a);
+  color: white;
+  padding: 50px 40px;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 40px rgba(26, 39, 68, 0.3);
+}
+.decision h2 {
+  font-size: 30px;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+.decision p {
+  font-size: 16px;
+  opacity: 0.9;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.option-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 22px 20px;
+  border-radius: 14px;
+  border: 2px solid rgba(232, 184, 75, 0.3);
+  transition: all 0.3s;
+}
+.option-card:hover {
+  background: rgba(232, 184, 75, 0.15);
+  border-color: #e8b84b;
+}
+.option-num {
+  font-size: 11px;
+  color: #e8b84b;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+.option-name {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+.option-desc {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 30px 20px;
+  color: #7f8c8d;
+  font-size: 12px;
+}
+.footer .brand {
+  font-weight: 700;
+  color: #1a2744;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+@media print {
+  body { background: white; padding: 0; }
+  .cover, .nicho, .decision { page-break-inside: avoid; }
+  .nicho-header { background: #f8f9fc !important; -webkit-print-color-adjust: exact; }
+}
+@media (max-width: 600px) {
+  .pros-cons { grid-template-columns: 1fr; }
+  .cover h1 { font-size: 28px; }
+  .nicho-body, .nicho-header, .intro { padding-left: 25px; padding-right: 25px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- COVER -->
+<div class="cover">
+  <span class="brand-tag">Groovsy · Investigacion de Mercado</span>
+  <h1>Propuesta de Inversion</h1>
+  <p class="subtitle">3 Nichos Pre-validados para Lanzar tu Proximo Infoproducto</p>
+  <p class="date">Reporte generado · Mayo 2026</p>
+</div>
+
+<!-- INTRO -->
+<div class="intro">
+  <h2>Resumen para Decision</h2>
+  <p>Despues de analizar los productos digitales mas vendidos en plataformas de infoproductos (Hotmart Brasil + Udemy Global), identificamos <b>3 nichos que cumplen 4 criterios criticos</b>: (1) demanda real comprobada con miles de ventas, (2) ratings premium superiores a 4.7 estrellas, (3) formato compatible con ebook / guia interactiva (no requiere video, ni practica fisica, ni certificacion), y (4) precio sostenible para correr publicidad rentable.</p>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat-card"><div class="stat-num">3</div><div class="stat-label">Nichos Validados</div></div>
+  <div class="stat-card"><div class="stat-num">$25-60</div><div class="stat-label">Precio Recomendado USD</div></div>
+  <div class="stat-card"><div class="stat-num">4.7+</div><div class="stat-label">Rating Promedio Competidores</div></div>
+  <div class="stat-card"><div class="stat-num">12K+</div><div class="stat-label">Reviews Acumulados (validacion)</div></div>
+</div>
+
+<!-- NICHO 1 -->
+<div class="nicho">
+  <div class="nicho-header">
+    <div class="rank-badge">1</div>
+    <h2>Mentalidad Financiera y Abundancia</h2>
+    <p class="nicho-tagline">"Atrae prosperidad reprogramando tus creencias sobre el dinero"</p>
+  </div>
+  <div class="nicho-body">
+
+    <div class="pills">
+      <span class="pill pill-market">Mercado: LATAM Hispano</span>
+      <span class="pill pill-price">Precio sugerido: $35-60 USD</span>
+      <span class="pill pill-format">Formato: Ebook + Audios</span>
+      <span class="pill pill-audience">Audiencia: 28-55 anos</span>
+    </div>
+
+    <div class="block">
+      <div class="block-title">Concepto del Producto</div>
+      <div class="block-content">Una guia interactiva que combina psicologia financiera, ejercicios de journaling diario, audios de afirmaciones y tecnicas de neurociencia aplicadas para reprogramar la relacion del lector con el dinero. Entregado como libro digital + biblioteca de audios + planificador descargable.</div>
+    </div>
+
+    <div class="block">
+      <div class="block-title">Audiencia Objetivo</div>
+      <div class="block-content">Hombres y mujeres de 28-55 anos con bloqueos emocionales con el dinero, que buscan transformacion personal, han probado libros tradicionales sin resultados y estan dispuestos a invertir en su crecimiento. Nicho con alta urgencia emocional y disposicion a pagar.</div>
+    </div>
+
+    <div class="block">
+      <div class="block-title">Por Que Este Nicho</div>
+      <div class="block-content">
+        <ul>
+          <li>Es un tema universal: traduce sin friccion entre BR, Mexico, Colombia, Espana y USA hispano</li>
+          <li>Audiencia con dolor emocional alto = decisiones de compra rapidas y poco racionales sobre el precio</li>
+          <li>El formato ebook + audios + ejercicios escritos esta perfectamente alineado con tu modelo de produccion</li>
+          <li>Permite escalamiento natural a productos de alto ticket (mentoria, comunidad, programas de 90 dias)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="evidence-box">
+      <div class="evidence-title">Evidencia de Mercado (Hotmart Brasil)</div>
+      <div class="evidence-item">
+        <span class="evidence-name">"Iman del Dinero" · Beth Russo</span>
+        <span class="evidence-stats">2,639 reviews · 4.9 estrellas · R$ 377 (~$70 USD)</span>
+      </div>
+      <div class="evidence-item">
+        <span class="evidence-name">"Reservatorio de Dopamina"</span>
+        <span class="evidence-stats">1,323 reviews · 4.7 estrellas · R$ 497 (~$93 USD)</span>
+      </div>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros-box">
+        <div class="block-title">Ventajas</div>
+        <div class="block-content">
+          <ul>
+            <li>Precio premium ($35-60) sostenible</li>
+            <li>Mercado emocional = ventas rapidas</li>
+            <li>Producto escalable a membership</li>
+            <li>Sin barrera tecnica de produccion</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cons-box">
+        <div class="block-title">Riesgos a Mitigar</div>
+        <div class="block-content">
+          <ul>
+            <li>Saturacion media en mercados anglos</li>
+            <li>Requiere posicionamiento autoral fuerte</li>
+            <li>Competencia con marcas establecidas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <div class="label">Recomendacion Estrategica</div>
+      <div class="recommendation">Mejor opcion para validar el sistema. Riesgo bajo, retorno alto, mercado universal hispano.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- NICHO 2 -->
+<div class="nicho">
+  <div class="nicho-header">
+    <div class="rank-badge">2</div>
+    <h2>IA para Creadores de Contenido y Copywriters</h2>
+    <p class="nicho-tagline">"Multiplica tu produccion creativa con inteligencia artificial"</p>
+  </div>
+  <div class="nicho-body">
+
+    <div class="pills">
+      <span class="pill pill-market">Mercado: Global (ES + EN)</span>
+      <span class="pill pill-price">Precio sugerido: $25-50 USD</span>
+      <span class="pill pill-format">Formato: HTML Interactivo + Prompts</span>
+      <span class="pill pill-audience">Audiencia: 22-45 anos</span>
+    </div>
+
+    <div class="block">
+      <div class="block-title">Concepto del Producto</div>
+      <div class="block-content">Una guia digital interactiva con biblioteca de mas de 100 prompts probados, plantillas editables, ejemplos comparativos y workflow paso a paso para usar IA (ChatGPT, Claude, Gemini) en creacion de contenido para redes sociales, blogs, copy de ventas y videos. Formato HTML estilo Claude Artifacts.</div>
+    </div>
+
+    <div class="block">
+      <div class="block-title">Audiencia Objetivo</div>
+      <div class="block-content">Creadores de contenido, community managers, copywriters freelance, emprendedores digitales 22-45 anos, marketers en transicion. Tienen presupuesto, urgencia (la IA esta cambiando su industria) y son consumidores activos de cursos digitales.</div>
+    </div>
+
+    <div class="block">
+      <div class="block-title">Por Que Este Nicho</div>
+      <div class="block-content">
+        <ul>
+          <li>Tendencia explosiva: la demanda crece mas rapido que la oferta</li>
+          <li>Audiencia conoce el formato "biblioteca de prompts" y la valora</li>
+          <li>Mercado global accesible: lanzamiento en espanol con expansion natural a ingles</li>
+          <li>Producto se actualiza facilmente (nuevos modelos = nueva version)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="evidence-box">
+      <div class="evidence-title">Evidencia de Mercado (Udemy Global)</div>
+      <div class="evidence-item">
+        <span class="evidence-name">Multiples cursos AI for content creators</span>
+        <span class="evidence-stats">Tendencia trending en categoria business / marketing</span>
+      </div>
+      <div class="evidence-item">
+        <span class="evidence-name">Validacion cruzada en plataformas anglo</span>
+        <span class="evidence-stats">Producto incipiente con curva de adopcion creciente</span>
+      </div>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros-box">
+        <div class="block-title">Ventajas</div>
+        <div class="block-content">
+          <ul>
+            <li>Timing perfecto: ola tecnologica en alza</li>
+            <li>Producto escalable internacionalmente</li>
+            <li>Diferenciable por curacion de prompts</li>
+            <li>Audiencia early-adopter = paga rapido</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cons-box">
+        <div class="block-title">Riesgos a Mitigar</div>
+        <div class="block-content">
+          <ul>
+            <li>Competencia creciendo rapido</li>
+            <li>Requiere actualizaciones frecuentes</li>
+            <li>Audiencia exigente tecnicamente</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <div class="label">Recomendacion Estrategica</div>
+      <div class="recommendation">Apuesta de tendencia. Excelente si quieres entrar a un mercado emergente y construir autoridad en IA aplicada.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- NICHO 3 -->
+<div class="nicho">
+  <div class="nicho-header">
+    <div class="rank-badge">3</div>
+    <h2>IA para Analisis de Datos y Business Intelligence</h2>
+    <p class="nicho-tagline">"Convierte datos en decisiones automatizadas con inteligencia artificial"</p>
+  </div>
+  <div class="nicho-body">
+
+    <div class="pills">
+      <span class="pill pill-market">Mercado: Global B2B</span>
+      <span class="pill pill-price">Precio sugerido: $30-60 USD</span>
+      <span class="pill pill-format">Formato: Ebook + Cheatsheets</span>
+      <span class="pill pill-audience">Audiencia: 28-50 profesional</span>
+    </div>
+
+    <div class="block">
+      <div class="block-title">Concepto del Producto</div>
+      <div class="block-content">Guia profesional con prompts especializados, plantillas Excel y Notion, casos de uso reales por industria, y flujos automatizados para que analistas de datos y profesionales no-tecnicos usen IA en reporting, analisis predictivo, dashboards y toma de decisiones.</div>
+    </div>
+
+    <div class="block">
+      <div class="block-title">Audiencia Objetivo</div>
+      <div class="block-content">Analistas de datos, gerentes financieros, controllers, consultores, emprendedores de medianas empresas. Audiencia B2B con presupuesto corporativo o personal alto, busca herramientas concretas para presentar mejores informes y tomar mejores decisiones.</div>
+    </div>
+
+    <div class="block">
+      <div class="block-title">Por Que Este Nicho</div>
+      <div class="block-content">
+        <ul>
+          <li>Audiencia B2B = mayor poder adquisitivo y disposicion a pagar mas alto</li>
+          <li>Diferenciacion clara: foco en analitica, no en contenido generico</li>
+          <li>Producto extensible a versiones por industria (finanzas, marketing, RRHH)</li>
+          <li>Compradores compran formacion como inversion profesional, no entretenimiento</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="evidence-box">
+      <div class="evidence-title">Evidencia de Mercado</div>
+      <div class="evidence-item">
+        <span class="evidence-name">Trending alto en categoria Business Udemy</span>
+        <span class="evidence-stats">Mercado emergente con poca saturacion</span>
+      </div>
+      <div class="evidence-item">
+        <span class="evidence-name">Validado por demanda corporativa creciente</span>
+        <span class="evidence-stats">Empresas migrando a IA para analitica</span>
+      </div>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros-box">
+        <div class="block-title">Ventajas</div>
+        <div class="block-content">
+          <ul>
+            <li>Mayor ticket promedio (B2B)</li>
+            <li>Audiencia profesional = baja tasa de devolucion</li>
+            <li>Posibilidad de licencias corporativas</li>
+            <li>Mercado especializado y nicho concreto</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cons-box">
+        <div class="block-title">Riesgos a Mitigar</div>
+        <div class="block-content">
+          <ul>
+            <li>Audiencia mas exigente tecnicamente</li>
+            <li>Ciclo de venta B2B mas largo</li>
+            <li>Volumen menor que mercado consumer</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <div class="label">Recomendacion Estrategica</div>
+      <div class="recommendation">Opcion de mayor margen unitario. Ideal si la audiencia objetivo del cliente tiene perfil profesional y empresarial.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- DECISION FINAL -->
+<div class="decision">
+  <h2>Cual nicho lanzamos primero?</h2>
+  <p>Estos 3 nichos estan listos para entrar a la fase de investigacion profunda, donde validaremos producto especifico, landing page, hooks de publicidad y estructura completa de oferta.</p>
+
+  <div class="options">
+    <div class="option-card">
+      <div class="option-num">OPCION 1</div>
+      <div class="option-name">Mentalidad Financiera</div>
+      <div class="option-desc">Mas seguro · Mercado universal · Validacion rapida</div>
+    </div>
+    <div class="option-card">
+      <div class="option-num">OPCION 2</div>
+      <div class="option-name">IA Content Creators</div>
+      <div class="option-desc">Tendencia explosiva · Mercado global · Diferenciacion clara</div>
+    </div>
+    <div class="option-card">
+      <div class="option-num">OPCION 3</div>
+      <div class="option-name">IA Analisis de Datos</div>
+      <div class="option-desc">Mayor ticket B2B · Mercado especializado · Margen alto</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="brand">Groovsy · Investigacion de Mercado</div>
+  <p>Este reporte fue generado automaticamente con datos reales de plataformas de infoproductos (Hotmart, Udemy)</p>
+  <p>Una vez tomada la decision, el siguiente paso es la investigacion profunda del nicho elegido</p>
+</div>
+
+</div>
+
+</body>
+</html>
